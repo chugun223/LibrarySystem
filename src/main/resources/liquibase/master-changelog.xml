@@ -10,5 +10,6 @@
     <include file="liquibase/create-users.xml"/>
     <include file="liquibase/create-books.xml"/>
     <include file="liquibase/create-loans.xml"/>
+    <include file="liquibase/test-data.xml"/>
 
 </databaseChangeLog>
