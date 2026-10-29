@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="test-authors" author="Knyazev_Timofey">
+        <insert tableName="authors">
+            <column name="id" valueNumeric="1"/>
+            <column name="first_name" value="Лев"/>
+            <column name="last_name" value="Толстой"/>
+            <column name="biography" value="Русский писатель, классик мировой литературы"/>
+            <column name="birth_date" valueDate="1828-09-09"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="id" valueNumeric="2"/>
+            <column name="first_name" value="Фёдор"/>
+            <column name="last_name" value="Достоевский"/>
+            <column name="biography" value="Русский писатель, мыслитель, философ"/>
+            <column name="birth_date" valueDate="1821-11-11"/>
+        </insert>
+        <insert tableName="authors">
+            <column name="id" valueNumeric="3"/>
+            <column name="first_name" value="Антон"/>
+            <column name="last_name" value="Чехов"/>
+            <column name="biography" value="Русский писатель, драматург"/>
+            <column name="birth_date" valueDate="1860-01-29"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-genres" author="Knyazev_Timofey">
+        <insert tableName="genres">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Роман"/>
+            <column name="description" value="Крупное прозаическое произведение"/>
+            <column name="popularity_score" valueNumeric="10"/>
+        </insert>
+        <insert tableName="genres">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Повесть"/>
+            <column name="description" value="Прозаическое произведение среднего размера"/>
+            <column name="popularity_score" valueNumeric="7"/>
+        </insert>
+        <insert tableName="genres">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Рассказ"/>
+            <column name="description" value="Короткое прозаическое произведение"/>
+            <column name="popularity_score" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-books" author="Knyazev_Timofey">
+        <insert tableName="books">
+            <column name="id" valueNumeric="1"/>
+            <column name="title" value="Война и мир"/>
+            <column name="publication_year" valueNumeric="1869"/>
+            <column name="is_available" valueBoolean="false"/>
+            <column name="author_id" valueNumeric="1"/>
+            <column name="genre_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="books">
+            <column name="id" valueNumeric="2"/>
+            <column name="title" value="Анна Каренина"/>
+            <column name="publication_year" valueNumeric="1877"/>
+            <column name="is_available" valueBoolean="true"/>
+            <column name="author_id" valueNumeric="1"/>
+            <column name="genre_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="books">
+            <column name="id" valueNumeric="3"/>
+            <column name="title" value="Преступление и наказание"/>
+            <column name="publication_year" valueNumeric="1866"/>
+            <column name="is_available" valueBoolean="false"/>
+            <column name="author_id" valueNumeric="2"/>
+            <column name="genre_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="books">
+            <column name="id" valueNumeric="4"/>
+            <column name="title" value="Идиот"/>
+            <column name="publication_year" valueNumeric="1869"/>
+            <column name="is_available" valueBoolean="false"/>
+            <column name="author_id" valueNumeric="2"/>
+            <column name="genre_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="books">
+            <column name="id" valueNumeric="5"/>
+            <column name="title" value="Вишнёвый сад"/>
+            <column name="publication_year" valueNumeric="1904"/>
+            <column name="is_available" valueBoolean="true"/>
+            <column name="author_id" valueNumeric="3"/>
+            <column name="genre_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-users" author="Knyazev_Timofey">
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="first_name" value="Иван"/>
+            <column name="last_name" value="Иванов"/>
+            <column name="email" value="ivanov@example.com"/>
+            <column name="phone_number" value="+79001111111"/>
+            <column name="registration_date" valueDate="2023-01-15"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="2"/>
+            <column name="first_name" value="Пётр"/>
+            <column name="last_name" value="Петров"/>
+            <column name="email" value="petrov@example.com"/>
+            <column name="phone_number" value="+79002222222"/>
+            <column name="registration_date" valueDate="2023-03-20"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="3"/>
+            <column name="first_name" value="Сергей"/>
+            <column name="last_name" value="Сергеев"/>
+            <column name="email" value="sergeev@example.com"/>
+            <column name="phone_number" value="+79003333333"/>
+            <column name="registration_date" valueDate="2023-06-10"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="4"/>
+            <column name="first_name" value="Анна"/>
+            <column name="last_name" value="Аннова"/>
+            <column name="email" value="annova@example.com"/>
+            <column name="phone_number" value="+79004444444"/>
+            <column name="registration_date" valueDate="2024-02-01"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="5"/>
+            <column name="first_name" value="Мария"/>
+            <column name="last_name" value="Мариева"/>
+            <column name="email" value="marieva@example.com"/>
+            <column name="phone_number" value="+79005555555"/>
+            <column name="registration_date" valueDate="2024-05-15"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-loans" author="Knyazev_Timofey">
+        <insert tableName="loans">
+            <column name="id" valueNumeric="1"/>
+            <column name="loan_date" valueDate="2024-06-01"/>
+            <column name="due_date" valueDate="2024-06-15"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="book_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="loans">
+            <column name="id" valueNumeric="2"/>
+            <column name="loan_date" valueDate="2024-06-10"/>
+            <column name="due_date" valueDate="2024-06-24"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="book_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="loans">
+            <column name="id" valueNumeric="3"/>
+            <column name="loan_date" valueDate="2024-06-20"/>
+            <column name="due_date" valueDate="2024-07-04"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="book_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="test-reset-sequences" author="Knyazev_Timofey">
+        <sql>SELECT setval('authors_id_seq', (SELECT MAX(id) FROM authors), true);</sql>
+        <sql>SELECT setval('genres_id_seq', (SELECT MAX(id) FROM genres), true);</sql>
+        <sql>SELECT setval('books_id_seq', (SELECT MAX(id) FROM books), true);</sql>
+        <sql>SELECT setval('users_id_seq', (SELECT MAX(id) FROM users), true);</sql>
+        <sql>SELECT setval('loans_id_seq', (SELECT MAX(id) FROM loans), true);</sql>
+    </changeSet>
+
+</databaseChangeLog>
