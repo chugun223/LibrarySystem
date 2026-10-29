@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import ru.Knyazev_Timofey.NauJava.domain.User;
+import ru.Knyazev_Timofey.NauJava.enums.Role;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,7 +22,7 @@ class UserRepositoryTest {
     void testFindByLastNameAndFirstName() {
         String firstName = "Имя-" + UUID.randomUUID();
         String lastName = "Фамилия-" + UUID.randomUUID();
-        userRepository.save(new User(firstName, lastName, "email", "+7", LocalDate.now()));
+        userRepository.save(new User(firstName, lastName, "email", "+7", "password", Role.USER, LocalDate.now()));
 
         List<User> found = userRepository.findByLastNameAndFirstName(lastName, firstName);
 
@@ -33,7 +34,7 @@ class UserRepositoryTest {
     void testFindByRegistrationDateBetween() {
         LocalDate regDate = LocalDate.of(2024, 6, 15);
         String email = UUID.randomUUID() + "@test";
-        userRepository.save(new User("Имя", "Фамилия", email, "+7", regDate));
+        userRepository.save(new User("Имя", "Фамилия", email, "+7", "password", Role.USER, regDate));
 
         List<User> found = userRepository.findByRegistrationDateBetween(LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 30));
 
