@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import ru.Knyazev_Timofey.NauJava.domain.*;
+import ru.Knyazev_Timofey.NauJava.enums.Role;
 import ru.Knyazev_Timofey.NauJava.repository.*;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -22,7 +23,7 @@ class LoanServiceTest {
 
     @Test
     void testCreateLoanSuccess() {
-        User user = userRepository.save(new User("Имя", "Фамилия-" + UUID.randomUUID(), UUID.randomUUID() + "@test.ru", "+7", LocalDate.now()));
+        User user = userRepository.save(new User("Имя", "Фамилия-" + UUID.randomUUID(), UUID.randomUUID() + "@test.ru", "+7", "password", Role.USER, LocalDate.now()));
         Author author = authorRepository.save(new Author("Имя", "Фамилия-" + UUID.randomUUID(), "Биография", LocalDate.of(1900, 1, 1)));
         Genre genre = genreRepository.save(new Genre("Жанр-" + UUID.randomUUID(), "Описание", 10));
         Book book = new Book("Книга", 2000, author, genre);
@@ -43,7 +44,7 @@ class LoanServiceTest {
 
     @Test
     void testCreateLoanOnAlreadyTakenBook() {
-        User user = userRepository.save(new User("Имя", "Фамилия-" + UUID.randomUUID(), UUID.randomUUID() + "@test.ru", "+7", LocalDate.now()));
+        User user = userRepository.save(new User("Имя", "Фамилия-" + UUID.randomUUID(), UUID.randomUUID() + "@test.ru", "+7", "password", Role.USER, LocalDate.now()));
         Author author = authorRepository.save(new Author("Имя", "Фамилия-" + UUID.randomUUID(), "Биография", LocalDate.of(1900, 1, 1)));
         Genre genre = genreRepository.save(new Genre("Жанр-" + UUID.randomUUID(), "Описание", 9));
         Book book = new Book("Книга", 2000, author, genre);
