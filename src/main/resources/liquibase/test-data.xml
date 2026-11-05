@@ -100,6 +100,8 @@
             <column name="last_name" value="Иванов"/>
             <column name="email" value="ivanov@example.com"/>
             <column name="phone_number" value="+79001111111"/>
+            <column name="password" value="$2a$10$6pERn.YH8nUYx7ISEYgE2uyzToFi1nv2.8irs/IjQtbgCh99Wjl1K"/>
+            <column name="role" value="ADMIN"/>
             <column name="registration_date" valueDate="2023-01-15"/>
         </insert>
         <insert tableName="users">
@@ -108,6 +110,8 @@
             <column name="last_name" value="Петров"/>
             <column name="email" value="petrov@example.com"/>
             <column name="phone_number" value="+79002222222"/>
+            <column name="password" value="$2a$10$6pERn.YH8nUYx7ISEYgE2uyzToFi1nv2.8irs/IjQtbgCh99Wjl1K"/>
+            <column name="role" value="USER"/>
             <column name="registration_date" valueDate="2023-03-20"/>
         </insert>
         <insert tableName="users">
@@ -116,6 +120,8 @@
             <column name="last_name" value="Сергеев"/>
             <column name="email" value="sergeev@example.com"/>
             <column name="phone_number" value="+79003333333"/>
+            <column name="password" value="$2a$10$6pERn.YH8nUYx7ISEYgE2uyzToFi1nv2.8irs/IjQtbgCh99Wjl1K"/>
+            <column name="role" value="USER"/>
             <column name="registration_date" valueDate="2023-06-10"/>
         </insert>
         <insert tableName="users">
@@ -124,6 +130,8 @@
             <column name="last_name" value="Аннова"/>
             <column name="email" value="annova@example.com"/>
             <column name="phone_number" value="+79004444444"/>
+            <column name="password" value="$2a$10$6pERn.YH8nUYx7ISEYgE2uyzToFi1nv2.8irs/IjQtbgCh99Wjl1K"/>
+            <column name="role" value="USER"/>
             <column name="registration_date" valueDate="2024-02-01"/>
         </insert>
         <insert tableName="users">
@@ -132,6 +140,8 @@
             <column name="last_name" value="Мариева"/>
             <column name="email" value="marieva@example.com"/>
             <column name="phone_number" value="+79005555555"/>
+            <column name="password" value="$2a$10$6pERn.YH8nUYx7ISEYgE2uyzToFi1nv2.8irs/IjQtbgCh99Wjl1K"/>
+            <column name="role" value="USER"/>
             <column name="registration_date" valueDate="2024-05-15"/>
         </insert>
     </changeSet>
