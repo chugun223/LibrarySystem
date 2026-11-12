@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <title>Список книг</title>
     <style>
-        table { border-collapse: collapse; }
-        th, td { border: 1px solid #ccc; padding: 6px 10px; }
-        th { background: #f4f4f4; }
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+        }
+
+        th {
+            background: #f4f4f4;
+        }
     </style>
 </head>
 <body>
 <h1>Список книг</h1>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit" id="logoutButton">Logout</button>
+</form>
 
 <p class="empty" th:if="${#lists.isEmpty(books)}">
     Книг пока нет.
