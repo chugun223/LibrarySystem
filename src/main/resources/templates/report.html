@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчёт по статистике приложения</title>
+</head>
+<body>
+
+<h1>Отчёт по статистике приложения</h1>
+
+<h2>Количество зарегистрированных пользователей</h2>
+<p>Всего пользователей: <span th:text="${userCount}">0</span></p>
+<p>Время вычисления: <span th:text="${userCountTime}">0</span> мс</p>
+
+<h2>Список книг</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Жанр</th>
+        <th>Год издания</th>
+        <th>Доступна</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}">1</td>
+        <td th:text="${book.title}">Название</td>
+        <td th:text="${book.author.firstName + ' ' + book.author.lastName}">Автор</td>
+        <td th:text="${book.genre.name}">Жанр</td>
+        <td th:text="${book.publicationYear}">2024</td>
+        <td th:text="${book.available} ? 'Да' : 'Нет'">Да</td>
+    </tr>
+    </tbody>
+</table>
+<p>Время получения списка книг: <span th:text="${booksTime}">0</span> мс</p>
+
+<h2>Общее время формирования отчёта</h2>
+<p>Общее время: <span th:text="${totalTime}">0</span> мс</p>
+
+</body>
+</html>
